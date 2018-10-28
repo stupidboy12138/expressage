@@ -1,0 +1,35 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="Id" name="订单编号" value="${item.Id}" underline="true"/>
+                            <#input id="customerName" name="用户" value="${item.customerName}" underline="true"/>
+                            <#input id="customerTelephone" name="电话号码" value="${item.customerTelephone}" underline="true"/>
+                            <#input id="recipients" name="收件人" value="${item.recipients}" />
+                            <#input id="customerPlace" name="收货地址" value="${item.customerPlace}" underline="true"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="expressageArriveTime" name="到件日期" value="${item.expressageArriveTime}" underline="true"/>
+                            <#input id="expressageDescription" name="备注" value="${item.expressageDescription}" underline="true"/>
+                            <#input id="expressageCompany" name="快递公司" value="${item.expressageCompany}" underline="true"/>
+                            <#input id="expressageCode" name="取件码" value="${item.expressageCode}" />
+                            <#input id="expressageStatus" name="订单状态" value="${item.expressageStatus}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="OrderInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="OrderInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/order/order_info.js"></script>
+@}
